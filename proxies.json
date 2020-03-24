@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+      "Conference redir": {
+
+        "matchCondition": {
+          "route": "/conference",
+          "methods": [
+            "GET"
+          ]
+        },
+        "backendUri": "https://localhost/card?type=conference"
+      },
+      "Root redir": {
+
+        "matchCondition": {
+          "route": "/",
+          "methods": [
+            "GET"
+          ]
+        },
+        "backendUri": "https://localhost/index"
+      }
+    }
+  }
