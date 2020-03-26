@@ -11,6 +11,16 @@
         },
         "backendUri": "https://localhost/card?type=conference"
       },
+      "Replystorm redir": {
+
+        "matchCondition": {
+          "route": "/replystorm",
+          "methods": [
+            "GET"
+          ]
+        },
+        "backendUri": "https://localhost/card?type=replystorm"
+      },
       "Root redir": {
 
         "matchCondition": {

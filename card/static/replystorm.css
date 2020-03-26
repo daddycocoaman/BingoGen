@@ -1,0 +1,37 @@
+@page {
+  size: A4;
+  margin-bottom: 10cm;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(223, 189, 0);
+}
+.dataframe {
+    font-family: "Lucida Console", Monaco, monospace;
+    border: 3px solid rgb(223, 189, 0);
+    background-color: #11100F;
+    text-align: center;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }  
+  .dataframe td, dataframe th {
+    border: 2px solid black;
+    padding: 7px 6px;
+    width: 20%;
+    height: 100px;
+  }
+  .dataframe tbody td {
+    font-size: 14px;
+    color: black;
+  }
+  .dataframe tr:nth-child(even) {
+    background: rgb(223, 189, 0);
+  }
+  .dataframe tr:nth-child(odd) {
+    background:white;
+  }

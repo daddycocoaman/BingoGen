@@ -9,15 +9,17 @@ curdir = pathlib.Path(__file__).parent
 staticdir = curdir / "static"
 bindir = curdir / "binaries"
 listdir = curdir / "lists"
-dist = platform.dist()
+dist = platform.system()
+print(dist)
 
-if dist[0] == "debian":
-    imgconfig = imgkit.config(wkhtmltoimage=bindir / "wkhtmltoimage")
-else:
-    imgconfig = None
+if dist == "Linux":
+    imgconfig = imgkit.config(wkhtmltoimage=bindir / "wkhtmltoimage-nix")
+elif dist == "Windows":
+    imgconfig = imgkit.config(wkhtmltoimage=bindir / "wkhtmltoimage-win.exe")
 
 typeDict  = {
-                "conference": ["Conference Call", listdir / "conference.txt", staticdir / "conference.css"]
+                "conference": ["Conference Call", listdir / "conference.txt", staticdir / "conference.css"],
+                "replystorm": ["Reply Storm", listdir / "replystorm.txt", staticdir / "replystorm.css"]
             }
 
 
