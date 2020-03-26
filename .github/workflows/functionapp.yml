@@ -40,6 +40,10 @@ jobs:
         pip install -r requirements.txt --target=".python_packages/lib/site-packages"
         popd
 
+    - name: 'Make wkhtmlimage executable'
+      shell: bash
+      run: chmod +x /home/site/wwwroot/card/binaries/*
+      
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
       id: fa
