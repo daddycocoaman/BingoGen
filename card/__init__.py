@@ -19,10 +19,11 @@ elif dist == "Windows":
 
 typeDict  = {
                 "conference": ["Conference Call", listdir / "conference.txt", staticdir / "conference.css"],
-                "replystorm": ["Reply Storm", listdir / "replystorm.txt", staticdir / "replystorm.css"]
+                "replystorm": ["Reply Storm", listdir / "replystorm.txt", staticdir / "replystorm.css"],
+                "kjlife": ["KJ Life", listdir / "kjlife.txt", staticdir / "kjlife.css"]
             }
 
-
+FREE_SPACES = ["kjlife"]
 def main(req: func.HttpRequest) -> func.HttpResponse:
     card = typeDict.get(req.params.get("type"), None)
     if card:
@@ -30,8 +31,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
         opts = sample(phrases, 25)
         entries = [opts[i:i+5] for i in range(0, 25, 5)]
-        df = pd.DataFrame(entries)
+        if req.params.get("type") in FREE_SPACES:
+            entries[2][2] = "FREE"
 
+        df = pd.DataFrame(entries)
+        pd.set_option('display.width', 300)
         html = f"""
                 <h1>{card[0]} Bingo Card</h1>
                 {df.to_html(index=False, header=False)}

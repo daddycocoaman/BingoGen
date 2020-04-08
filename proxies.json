@@ -21,6 +21,16 @@
         },
         "backendUri": "https://localhost/card?type=replystorm"
       },
+      "KJ redir": {
+
+        "matchCondition": {
+          "route": "/kjlife",
+          "methods": [
+            "GET"
+          ]
+        },
+        "backendUri": "https://localhost/card?type=kjlife"
+      },
       "Root redir": {
 
         "matchCondition": {
