@@ -31,6 +31,16 @@
         },
         "backendUri": "https://localhost/card?type=kjlife"
       },
+      "ATT&CK redir": {
+
+        "matchCondition": {
+          "route": "/mitreattack",
+          "methods": [
+            "GET"
+          ]
+        },
+        "backendUri": "https://localhost/card?type=mitreattack"
+      },
       "Root redir": {
 
         "matchCondition": {

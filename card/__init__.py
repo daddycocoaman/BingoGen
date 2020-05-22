@@ -20,19 +20,25 @@ elif dist == "Windows":
 typeDict  = {
                 "conference": ["Conference Call", listdir / "conference.txt", staticdir / "conference.css"],
                 "replystorm": ["Reply Storm", listdir / "replystorm.txt", staticdir / "replystorm.css"],
-                "kjlife": ["KJ Life", listdir / "kjlife.txt", staticdir / "kjlife.css"]
+                "kjlife": ["KJ Life", listdir / "kjlife.txt", staticdir / "kjlife.css"],
+                "mitreattack": ["MITRE ATT&CK", listdir / "mitreattack.txt", staticdir / "mitreattack.css"]
             }
 
 FREE_SPACES = ["kjlife"]
 def main(req: func.HttpRequest) -> func.HttpResponse:
+
     card = typeDict.get(req.params.get("type"), None)
     if card:
         phrases = open(card[1]).read().splitlines()
 
         opts = sample(phrases, 25)
         entries = [opts[i:i+5] for i in range(0, 25, 5)]
+
+        # Handle FREE SPACE slots
         if req.params.get("type") in FREE_SPACES:
             entries[2][2] = "FREE"
+        elif req.params.get("type") == "mitreattack":
+            entries[2][2] = "POWERSHELL"
 
         df = pd.DataFrame(entries)
         pd.set_option('display.width', 300)

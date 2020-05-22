@@ -10,6 +10,7 @@ body {
 h1 {
     text-align: center;
     color: rgb(2, 100, 228);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .dataframe {
     font-family: "Lucida Console", Monaco, monospace;
