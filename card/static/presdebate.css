@@ -1,0 +1,46 @@
+@page {
+  size: A4;
+  margin-bottom: 10cm;
+}
+
+body {
+  background-color: rgba(255, 255, 255, 0.726);
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.dataframe {
+  font-family: "Lucida Console", Monaco, monospace;
+  border: 3px solid black;
+  background-color: #11100f;
+  text-align: center;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+.dataframe td,
+dataframe th {
+  border: 2px solid black;
+  padding: 7px 6px;
+  width: 20%;
+  height: 100px;
+}
+.dataframe tbody td {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  width: 20%;
+}
+.dataframe tr:nth-child(even) {
+  background: #002147;
+  color: white;
+}
+.dataframe tr:nth-child(odd) {
+  background: #bb133e;
+}
+.dataframe tr:nth-child(3) td:nth-child(3) {
+  background: rgb(255, 255, 255);
+  color: black;
+}

@@ -21,7 +21,8 @@ typeDict  = {
                 "conference": ["Conference Call", listdir / "conference.txt", staticdir / "conference.css"],
                 "replystorm": ["Reply Storm", listdir / "replystorm.txt", staticdir / "replystorm.css"],
                 "kjlife": ["KJ Life", listdir / "kjlife.txt", staticdir / "kjlife.css"],
-                "mitreattack": ["MITRE ATT&CK", listdir / "mitreattack.txt", staticdir / "mitreattack.css"]
+                "mitreattack": ["MITRE ATT&CK", listdir / "mitreattack.txt", staticdir / "mitreattack.css"],
+                "presdebate": ["Presidental Debate 2020", listdir / "presdebate.txt", staticdir / "presdebate.css"]
             }
 
 FREE_SPACES = ["kjlife"]
@@ -39,6 +40,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             entries[2][2] = "FREE"
         elif req.params.get("type") == "mitreattack":
             entries[2][2] = "POWERSHELL"
+        elif req.params.get("type") == "presdebate":
+            entries[2][2] = "SOCIALIST SPACE"
 
         df = pd.DataFrame(entries)
         pd.set_option('display.width', 300)

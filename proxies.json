@@ -1,55 +1,47 @@
 {
-    "$schema": "http://json.schemastore.org/proxies",
-    "proxies": {
-      "Conference redir": {
-
-        "matchCondition": {
-          "route": "/conference",
-          "methods": [
-            "GET"
-          ]
-        },
-        "backendUri": "https://localhost/card?type=conference"
+  "$schema": "http://json.schemastore.org/proxies",
+  "proxies": {
+    "Conference redir": {
+      "matchCondition": {
+        "route": "/conference",
+        "methods": ["GET"]
       },
-      "Replystorm redir": {
-
-        "matchCondition": {
-          "route": "/replystorm",
-          "methods": [
-            "GET"
-          ]
-        },
-        "backendUri": "https://localhost/card?type=replystorm"
+      "backendUri": "https://localhost/card?type=conference"
+    },
+    "Replystorm redir": {
+      "matchCondition": {
+        "route": "/replystorm",
+        "methods": ["GET"]
       },
-      "KJ redir": {
-
-        "matchCondition": {
-          "route": "/kjlife",
-          "methods": [
-            "GET"
-          ]
-        },
-        "backendUri": "https://localhost/card?type=kjlife"
+      "backendUri": "https://localhost/card?type=replystorm"
+    },
+    "KJ redir": {
+      "matchCondition": {
+        "route": "/kjlife",
+        "methods": ["GET"]
       },
-      "ATT&CK redir": {
-
-        "matchCondition": {
-          "route": "/mitreattack",
-          "methods": [
-            "GET"
-          ]
-        },
-        "backendUri": "https://localhost/card?type=mitreattack"
+      "backendUri": "https://localhost/card?type=kjlife"
+    },
+    "ATT&CK redir": {
+      "matchCondition": {
+        "route": "/mitreattack",
+        "methods": ["GET"]
       },
-      "Root redir": {
-
-        "matchCondition": {
-          "route": "/",
-          "methods": [
-            "GET"
-          ]
-        },
-        "backendUri": "https://localhost/index"
-      }
+      "backendUri": "https://localhost/card?type=mitreattack"
+    },
+    "PresDebate redir": {
+      "matchCondition": {
+        "route": "/presdebate",
+        "methods": ["GET"]
+      },
+      "backendUri": "https://localhost/card?type=presdebate"
+    },
+    "Root redir": {
+      "matchCondition": {
+        "route": "/",
+        "methods": ["GET"]
+      },
+      "backendUri": "https://localhost/index"
     }
   }
+}
